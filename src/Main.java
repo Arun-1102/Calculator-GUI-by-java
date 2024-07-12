@@ -1,9 +1,10 @@
-// Java program to create a simple calculator
-// with basic +, -, /, * using java swing elements
+//To increase the size of the buttons in the code, you can set the preferred size for each button. Here's the modified version of the code with increased button sizes:
 
+//java
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*;
+
 class calculator extends JFrame implements ActionListener {
     // create a frame
     static JFrame f;
@@ -15,22 +16,19 @@ class calculator extends JFrame implements ActionListener {
     String s0, s1, s2;
 
     // default constructor
-    calculator()
-    {
+    calculator() {
         s0 = s1 = s2 = "";
     }
 
     // main function
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         // create a frame
         f = new JFrame("calculator");
 
         try {
             // set look and feel
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.err.println(e.getMessage());
         }
 
@@ -40,7 +38,7 @@ class calculator extends JFrame implements ActionListener {
         // create a textfield
         l = new JTextField(16);
 
-        // set the textfield to non editable
+        // set the textfield to non-editable
         l.setEditable(false);
 
         // create number buttons and some operators
@@ -58,6 +56,19 @@ class calculator extends JFrame implements ActionListener {
         b8 = new JButton("8");
         b9 = new JButton("9");
 
+        // set button sizes
+        Dimension buttonSize = new Dimension(50, 50);
+        b0.setPreferredSize(buttonSize);
+        b1.setPreferredSize(buttonSize);
+        b2.setPreferredSize(buttonSize);
+        b3.setPreferredSize(buttonSize);
+        b4.setPreferredSize(buttonSize);
+        b5.setPreferredSize(buttonSize);
+        b6.setPreferredSize(buttonSize);
+        b7.setPreferredSize(buttonSize);
+        b8.setPreferredSize(buttonSize);
+        b9.setPreferredSize(buttonSize);
+
         // equals button
         beq1 = new JButton("=");
 
@@ -70,6 +81,15 @@ class calculator extends JFrame implements ActionListener {
 
         // create . button
         be = new JButton(".");
+
+        // set operator button sizes
+        ba.setPreferredSize(buttonSize);
+        bs.setPreferredSize(buttonSize);
+        bd.setPreferredSize(buttonSize);
+        bm.setPreferredSize(buttonSize);
+        beq.setPreferredSize(buttonSize);
+        be.setPreferredSize(buttonSize);
+        beq1.setPreferredSize(buttonSize);
 
         // create a panel
         JPanel p = new JPanel();
@@ -119,11 +139,11 @@ class calculator extends JFrame implements ActionListener {
         // add panel to frame
         f.add(p);
 
-        f.setSize(200, 250);
+        f.setSize(300, 400); // increase frame size to accommodate larger buttons
         f.show();
     }
-    public void actionPerformed(ActionEvent e)
-    {
+
+    public void actionPerformed(ActionEvent e) {
         String s = e.getActionCommand();
 
         // if the value is a number
@@ -136,15 +156,13 @@ class calculator extends JFrame implements ActionListener {
 
             // set the value of text
             l.setText(s0 + s1 + s2);
-        }
-        else if (s.charAt(0) == 'C') {
+        } else if (s.charAt(0) == 'C') {
             // clear the one letter
             s0 = s1 = s2 = "";
 
             // set the value of text
             l.setText(s0 + s1 + s2);
-        }
-        else if (s.charAt(0) == '=') {
+        } else if (s.charAt(0) == '=') {
 
             double te;
 
@@ -165,12 +183,11 @@ class calculator extends JFrame implements ActionListener {
             s0 = Double.toString(te);
 
             s1 = s2 = "";
-        }
-        else {
+        } else {
             // if there was no operand
             if (s1.equals("") || s2.equals(""))
                 s1 = s;
-                // else evaluate
+            // else evaluate
             else {
                 double te;
 
@@ -199,3 +216,6 @@ class calculator extends JFrame implements ActionListener {
         }
     }
 }
+
+
+//This code increases the size of the buttons and adjusts the frame size to accommodate them.
