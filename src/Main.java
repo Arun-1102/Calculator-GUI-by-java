@@ -114,12 +114,12 @@ class calculator extends JFrame implements ActionListener {
         p.add(beq1);
 
         // set Background of panel
-        p.setBackground(Color.blue);
+        p.setBackground(Color.GREEN);
 
         // add panel to frame
         f.add(p);
 
-        f.setSize(400, 600);
+        f.setSize(200, 250);
         f.show();
     }
     public void actionPerformed(ActionEvent e)
